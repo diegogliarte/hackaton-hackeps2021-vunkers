@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mosquito Detector</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/home.css') }}">
+
+</head>
+<body>
+<div class="container">
+    <h1>Mosquito Dashboard</h1>
+    <div class="images">
+        {% for image, detection in data %}
+        <a class="remove" href="{{ url_for('remove', id=detection[0]) }}">X</a>
+        <a class="image" href="{{ url_for('images', id=detection[0]) }}">
+            <img src="{{ url_for('static', filename='processed/' + image) }}" alt="{{image}}">
+            <span>Small: {{detection[1]}}</span>
+            <span>Medium: {{detection[2]}}</span>
+            <span>Big: {{detection[3]}}</span>
+            <span>Fly: {{detection[4]}}</span>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>

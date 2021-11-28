@@ -1,0 +1,8 @@
+{
+  "realtime": false,
+  "effects": {
+    "gaussian": 5,
+    "threshold": 100
+  },
+  "debug": false
+}
